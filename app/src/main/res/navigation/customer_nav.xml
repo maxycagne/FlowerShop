@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/customer_nav"
+    app:startDestination="@id/customerHomepage">
+
+    <fragment
+        android:id="@+id/customerHomepage"
+        android:name="com.example.flowershop.Activities.Customer.Fragments.CustomerHomepage"
+        android:label="fragment_customer_homepage"
+        tools:layout="@layout/fragment_customer_homepage" >
+        <action
+            android:id="@+id/action_customerHomepage_to_myOrders"
+            app:destination="@id/myOrders" />
+    </fragment>
+    <fragment
+        android:id="@+id/myOrders"
+        android:name="com.example.flowershop.Activities.Customer.Fragments.MyOrders"
+        android:label="fragment_my_orders"
+        tools:layout="@layout/fragment_my_orders" >
+        <action
+            android:id="@+id/action_myOrders_to_customerHomepage"
+            app:destination="@id/customerHomepage" />
+    </fragment>
+</navigation>
