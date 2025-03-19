@@ -144,6 +144,17 @@
                 android:drawableTint="@color/white"
                 android:text="Confirm Change"
                 android:textAllCaps="true" />
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="75dp"
+                android:drawableLeft="@drawable/baseline_close_24"
+                android:drawableTint="@color/white"
+                android:backgroundTint="@color/design_default_color_error"
+                android:text="Delete Product"
+                android:textAllCaps="true" />
         </LinearLayout>
     </ScrollView>
 
