@@ -1,5 +1,6 @@
 package com.example.flowershop.Activities.Customer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -10,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.flowershop.Activities.All.Login;
 import com.example.flowershop.Database.DbHelper;
 import com.example.flowershop.R;
 import com.example.flowershop.databinding.ActivityCustomerProfileBinding;
@@ -40,5 +42,15 @@ public class CustomerProfile extends AppCompatActivity {
             return insets;
         });
         setDb();
+
+        root.btnBack.setOnClickListener(v->{
+            startActivity(new Intent(this, CustomerHome.class));
+            finish();
+        });
+
+        root.btnLogout.setOnClickListener(v->{
+            startActivity(new Intent(this, Login.class));
+            finish();
+        });
     }
 }

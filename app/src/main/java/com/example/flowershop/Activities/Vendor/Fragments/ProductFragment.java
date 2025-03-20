@@ -85,6 +85,8 @@ public class ProductFragment extends Fragment {
             FlowerDao flowerDao = ((VendorHome) getActivity()).getDbHelper().getFlowerDao();
             List<Flower> flowerList = flowerDao.getAllFlower();
 
+
+
             ((VendorHome) getActivity()).getHandler().post(()->
             {
                 if(flowerList == null)

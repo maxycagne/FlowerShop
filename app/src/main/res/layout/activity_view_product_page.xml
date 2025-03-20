@@ -110,6 +110,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
+                        android:singleLine="true"
                         android:inputType="number"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -134,7 +135,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$"
+                    android:text="P"
                     android:textAllCaps="true"
                     android:textSize="18sp"
                     android:textStyle="bold"

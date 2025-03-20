@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-03-19T14:48:15.104667300Z">
+        <DropdownSelection timestamp="2025-03-20T01:14:25.234015600Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Maverick\.android\avd\Medium_Phone_API_28.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Maverick\.android\avd\codefest_API_24_1.avd" />
             </handle>
           </Target>
         </DropdownSelection>

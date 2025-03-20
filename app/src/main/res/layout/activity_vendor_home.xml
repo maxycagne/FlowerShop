@@ -76,13 +76,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No Orders Available."
-            android:textSize="12sp"
-            android:layout_gravity="center">
-        </TextView>
 
     </FrameLayout>
 

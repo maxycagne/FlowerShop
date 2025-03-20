@@ -59,13 +59,14 @@ public class Register extends AppCompatActivity {
 
     public void register()
     {
-        if(validate())
+        if(!validate())
         {
             return;
         }
 
         String username = root.edtUsername.getText().toString();
         String firstName = root.edtFirstName.getText().toString();
+        String middle = root.edtMiddleName.getText().toString();
         String lastName = root.edtLastName.getText().toString();
         String address = root.edtAddress.getText().toString();
         String contactNum = root.edtContactNumber.getText().toString();
@@ -74,7 +75,7 @@ public class Register extends AppCompatActivity {
 
 
         Executors.newSingleThreadExecutor().submit(()->{
-            User user = new User(username,firstName,lastName,address,contactNum,password,priv);
+            User user = new User(username,firstName,middle,lastName,contactNum,password,address,priv);
             dbHelper.getUserDao().insertAllUser(user);
 
             handler.post(()->{
@@ -93,36 +94,25 @@ public class Register extends AppCompatActivity {
         {
             root.layoutEdtFirstName.setError("Fill up first name");
             root.layoutEdtFirstName.setErrorEnabled(true);
-            validate = true;
+            validate = false;
         }
         else {
             root.layoutEdtFirstName.setError("");
             root.layoutEdtFirstName.setErrorEnabled(false);
-            validate = false;
+
         }
 
-        if(root.edtMiddleName.getText().toString().equals(""))
-        {
-            root.layoutEdtMiddleName.setError("Fill up middleName");
-            root.layoutEdtMiddleName.setErrorEnabled(true);
-            validate = true;
-        }
-        else {
-            root.layoutEdtMiddleName.setError("");
-            root.layoutEdtMiddleName.setErrorEnabled(false);
-            validate = false;
-        }
 
         if(root.edtLastName.getText().toString().equals(""))
         {
             root.layoutEdtLastName.setError("Fill up last name");
             root.layoutEdtLastName.setErrorEnabled(true);
-            validate = true;
+            validate = false;
         }
         else {
             root.layoutEdtLastName.setError("");
             root.layoutEdtLastName.setErrorEnabled(false);
-            validate = false;
+
         }
 
 
@@ -130,12 +120,12 @@ public class Register extends AppCompatActivity {
         {
             root.layoutEdtAddress.setError("Fill up address");
             root.layoutEdtAddress.setErrorEnabled(true);
-            validate = true;
+            validate = false;
+
         }
         else {
             root.layoutEdtAddress.setError("");
             root.layoutEdtAddress.setErrorEnabled(false);
-            validate = false;
         }
 
 
@@ -143,61 +133,61 @@ public class Register extends AppCompatActivity {
         {
             root.layoutEdtContactNumber.setError("Fill up contact number");
             root.layoutEdtContactNumber.setErrorEnabled(true);
-            validate = true;
+            validate = false;
+
         }
         else {
             root.layoutEdtContactNumber.setError("");
             root.layoutEdtContactNumber.setErrorEnabled(false);
-            validate = false;
         }
 
         if(root.edtUsername.getText().toString().equals(""))
         {
             root.layoutEdtUsername.setError("Fill up username");
             root.layoutEdtUsername.setErrorEnabled(true);
-            validate = true;
+            validate = false;
+
         }
         else {
             root.layoutEdtUsername.setError("");
             root.layoutEdtUsername.setErrorEnabled(false);
-            validate = false;
         }
 
         if(root.edtPassword.getText().toString().equals(""))
         {
             root.layoutEdtPassword.setError("Fill up password");
             root.layoutEdtPassword.setErrorEnabled(true);
-            validate = true;
+            validate = false;
         }
         else {
             root.layoutEdtPassword.setError("");
             root.layoutEdtPassword.setErrorEnabled(false);
-            validate = false;
         }
 
         if(root.edtConfirmPassword.getText().toString().equals(""))
         {
             root.layoutEdtConfirmPassword.setError("Fill up confirm password");
             root.layoutEdtConfirmPassword.setErrorEnabled(true);
-            validate = true;
+            validate = false;
+
         }
         else {
             root.layoutEdtConfirmPassword.setError("");
             root.layoutEdtConfirmPassword.setErrorEnabled(false);
-            validate = false;
+
         }
 
 
-        if(root.edtPassword.getText().toString().equals(root.edtConfirmPassword.getText().toString()))
+        if(!root.edtPassword.getText().toString().equals(root.edtConfirmPassword.getText().toString()))
         {
             root.layoutEdtConfirmPassword.setError("Confirm password does not match password");
             root.layoutEdtConfirmPassword.setErrorEnabled(true);
-            validate = true;
+            validate = false;
         }
         else {
             root.layoutEdtConfirmPassword.setError("");
             root.layoutEdtConfirmPassword.setErrorEnabled(false);
-            validate = false;
+
 
         }
 

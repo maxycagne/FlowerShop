@@ -58,6 +58,11 @@ public class CustomerHome extends AppCompatActivity {
             finish();
         });
 
+        root.btnAccount.setOnClickListener(v->{
+            startActivity(new Intent(this, CustomerProfile.class));
+            finish();
+        });
+
         ReplaceFragment(new CustomerHomepage());
 
         root.customerBottomNav.setOnItemSelectedListener(item -> {

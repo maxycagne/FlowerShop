@@ -128,23 +128,25 @@ public class Billing extends AppCompatActivity {
                 return;
             }
 
+            for (Cart cart : cartList) {
+                Flower flower = dbHelper.flowerDao.findFlowerbyFlowerName(cart.getFlowerName());
+                if (flower != null && flower.getQuantity() < cart.getQuantity()) {
+                    handler.post(() -> Toast.makeText(this, "Not enough stock for " + flower.getFlowerName(), Toast.LENGTH_SHORT).show());
+                    return;
+                }
+            }
+
             double totalAmount = 0;
             StringBuilder flowerNames = new StringBuilder();
             for (Cart cart : cartList) {
-                totalAmount += cart.getPrice() * cart.getQuantity();
-                flowerNames.append(cart.getFlowerName()).append(", ");
-
-                Flower flower = dbHelper.flowerDao.findFlowerbyName(cart.getFlowerName());
+                Flower flower = dbHelper.flowerDao.findFlowerbyFlowerName(cart.getFlowerName());
                 if (flower != null) {
-                    int newQuantity = flower.getQuantity() - cart.getQuantity();
-                    if (newQuantity < 0) {
-                        handler.post(() -> Toast.makeText(this, "Not enough stock for " + flower.getName(), Toast.LENGTH_SHORT).show());
-                        return;
-                    }
-                    // Update the flower quantity
-                    flower.setQuantity(newQuantity);
+                    flower.setQuantity(flower.getQuantity() - cart.getQuantity());
                     dbHelper.flowerDao.updateFlower(flower);
                 }
+
+                totalAmount += cart.getPrice() * cart.getQuantity();
+                flowerNames.append(cart.getFlowerName()).append(", ");
             }
 
 
@@ -153,7 +155,7 @@ public class Billing extends AppCompatActivity {
             String name = root.edtFirstName.getText().toString();
             String contactNum = root.edtContactNumber.getText().toString();
             String address = root.edtAddress.getText().toString();
-            String date = "2025-19-12";
+            String date = "2025-20-03";
             String status = "Pending";
 
 

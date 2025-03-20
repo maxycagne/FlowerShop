@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.flowershop.Database.Entity.Flower;
 import com.example.flowershop.Database.Entity.OrderDetails;
@@ -24,6 +25,10 @@ public interface FlowerDao {
 
 
     @Query("SELECT * FROM flower WHERE flowerName = :flowerName")
+    Flower findFlowerbyFlowerName(String flowerName);
+
+
+    @Query("SELECT * FROM flower WHERE flowerName = :flowerName")
     List<Flower> getAllByFlowerName(String flowerName);
 
     @Insert
@@ -31,4 +36,7 @@ public interface FlowerDao {
 
     @Delete
     void deleteFlower(Flower flower);
+
+    @Update
+    void updateFlower(Flower flower);
 }

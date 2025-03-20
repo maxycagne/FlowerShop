@@ -88,6 +88,7 @@
                     android:layout_height="wrap_content"
                     android:editable="false"
                     android:inputType="none"
+                    android:maxLength="10"
                     android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,13 +132,24 @@
                 android:layout_marginHorizontal="5dp"
                 android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/lstOrderItems"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/flowerName"
+                android:text="Flower Name"
+                android:textSize="14sp"
                 android:layout_marginHorizontal="5dp"
-                android:layout_marginBottom="5dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/quantity"
+                android:text="Quantity"
+                android:textSize="14sp"
+                android:layout_marginHorizontal="5dp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -45,8 +45,8 @@ public abstract class RoomDb extends RoomDatabase {
 
                     Executors.newSingleThreadExecutor().submit(()->{
 
-                        userDao.insertAllUser(new User("q","Maverick","Cagne","+639318992301","q","Tarlac City","Vendor"));
-                        userDao.insertAllUser(new User("qw","Maverick","Cagne","+639318992301","qw","Tarlac City","User"));
+                        userDao.insertAllUser(new User("q","Maverick","C","Cagne","+639318992301","q","Tarlac City","Vendor"));
+
 
                         flowerDao.insertAllFlower(new Flower("Daisy",50.0,50));
                         flowerDao.insertAllFlower(new Flower("Rose",100.0,50));
